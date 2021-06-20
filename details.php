@@ -90,11 +90,11 @@
 	<div class="container">
  <div class="row justify-content-between">
     <?php 
-	  $conn = mysqli_connect('localhost','root','','websitemusic');
-	 if($conn){ echo"";}
+	  include("include/conn.php");
+	 if($connect){ echo"";}
     $id=$_GET["id"];
     $sql="SELECT * FROM song Where song.SongID={$id} ";
-    $rs= mysqli_query($conn,$sql);
+    $rs= mysqli_query($connect,$sql);
     while ($row=mysqli_fetch_assoc($rs)) {
      ?>
         <div class="col-12" style=" text-align: left;">
