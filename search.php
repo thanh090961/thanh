@@ -58,19 +58,22 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/8/2/d/8/82d884e583a2226d37df196495da6b20.jpg" alt="First slide">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Website-He-01-1392x435.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/3/1/310b98ade43043a069c3d3e9ee0c5766_1515485837.jpg" alt="Second slide">
+      <img class="d-block w-100" src="https://www.hangdochoi.com/wp-content/uploads/2019/05/hangdochoi-banner-dochoi.jpg" 
+      alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/2/a/2ac9d9aa479519e1724db5b860373578_1499827968.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://cafefcdn.com/2018/12/17/banner-hinh-do-choi-1545016993587208100840.jpg" 
+      alt="Third slide">
     </div>
-	   <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/d/1/d1c2738deec7efd1942a3027a1c436b0_1499828277.jpg" alt="Third slide">
+     <div class="carousel-item">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Smoneo-Website-01-1392x435.png" alt="Third slide">
     </div>
-	  <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/b/0/6/d/b06db10784a4c5c1ff9d9beb14f312c3.jpg" alt="Third slide">
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://kiddystore.vn/uploads/slider/kiddystore_vn_1617330762.jpg" 
+      alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -85,32 +88,32 @@
 <!-- end slide -->
 <!-- list product -->
 
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h1>Search list</h1>
-	<?php 
-            include("include/conn.php");
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Search list</h1>
+  <?php 
+          include("include/conn.php");
            if(isset($_GET['search'])){ 
-			   echo "<script>alert('ok)</script>";
-				  $search =$_GET['inputSearch'];
-			   $result= mysqli_query($connect,"select * from song where SongName like '%$search%'");
-			   while($row=mysqli_fetch_array($result)){
-	
-			   $Image=$row['Image'];
-			   $name=$row['SongName'];
-			   $ida=$row['SongID'];
-			   echo "<div class='card border-success mb-3 style=' max-width: 33%;'>
-			   <div class='card-header bg-transparent boder-success'>$name</div>
-			   <div class='card-body text-success'>
-			   <img src='img/$Image' alt='' style='height: 20rem;width:50%'>
-			   </div>
-			   <div class='card-footer bg-transparent border-success'>
-			     <a class='btn btn-primary' href='details.php?id=$ida'>Song_Details</a>
-				 <a class='btn btn-danger' href='cart.php?id=$ida'>Add to cart</a></div>
-			   </div>";
-			   }
-		   }
+         echo "<script>alert('ok)</script>";
+          $search =$_GET['inputSearch'];
+         $result= mysqli_query($connect,"select * from song where ProductName like '%$search%'");
+         while($row=mysqli_fetch_array($result)){
+  
+         $Image=$row['Image'];
+         $name=$row['ProductName'];
+         $ida=$row['ProductID'];
+         echo "<div class='card border-success mb-3 style=' max-width: 33%;'>
+         <div class='card-header bg-transparent boder-success'>$name</div>
+         <div class='card-body text-success'>
+         <img src='img/$Image' alt='' style='height: 20rem;width:50%'>
+         </div>
+         <div class='card-footer bg-transparent border-success'>
+           <a class='btn btn-primary' href='details.php?id=$ida'>Song_Details</a>
+         <a class='btn btn-danger' href='cart.php?id=$ida'>Add to cart</a></div>
+         </div>";
+         }
+       }
            
         
     

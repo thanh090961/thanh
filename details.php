@@ -61,19 +61,22 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/8/2/d/8/82d884e583a2226d37df196495da6b20.jpg" alt="First slide">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Website-He-01-1392x435.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/3/1/310b98ade43043a069c3d3e9ee0c5766_1515485837.jpg" alt="Second slide">
+      <img class="d-block w-100" src="https://www.hangdochoi.com/wp-content/uploads/2019/05/hangdochoi-banner-dochoi.jpg" 
+      alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/2/a/2ac9d9aa479519e1724db5b860373578_1499827968.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://cafefcdn.com/2018/12/17/banner-hinh-do-choi-1545016993587208100840.jpg" 
+      alt="Third slide">
     </div>
-	   <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/d/1/d1c2738deec7efd1942a3027a1c436b0_1499828277.jpg" alt="Third slide">
+     <div class="carousel-item">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Smoneo-Website-01-1392x435.png" alt="Third slide">
     </div>
-	  <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/b/0/6/d/b06db10784a4c5c1ff9d9beb14f312c3.jpg" alt="Third slide">
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://kiddystore.vn/uploads/slider/kiddystore_vn_1617330762.jpg" 
+      alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -87,22 +90,20 @@
 </div>
 <!-- end slide -->
 <!-- list product -->
-	<div class="container">
+  <div class="container">
  <div class="row justify-content-between">
     <?php 
-	  include("include/conn.php");
-	 if($connect){ echo"";}
+   include("include/conn.php");
+   if($connect){ echo"";}
     $id=$_GET["id"];
-    $sql="SELECT * FROM song Where song.SongID={$id} ";
+    $sql="SELECT * FROM song Where song.ProductID={$id} ";
     $rs= mysqli_query($connect,$sql);
     while ($row=mysqli_fetch_assoc($rs)) {
      ?>
         <div class="col-12" style=" text-align: left;">
-        <h2 class="name-pro">Name Of Music: <?php echo $row['SongName'] ?></h2>
+        <h2 class="name-pro">Name Of product: <?php echo $row['ProductName'] ?></h2>
         <p style="color: red;padding-left: 20px;"> Price: <?php echo $row['Price']." "; ?></p>
-          <audio controls controlsList="nodownload" ontimeupdate="myAudio(this)" style="width: 250px">
-          <source src="song/<?php echo $row['MP3'] ?>" type="audio/mpeg">
-          </audio>
+          
           <script type="text/javascript">
             function myAudio(event){
               if(event.currentTime >60){
@@ -111,7 +112,7 @@
                 alert ("Sign in to continue!")
               }
             }
-			  
+        
           </script>
         <br>
         <br>
@@ -125,15 +126,15 @@
         </div>
         <div class="col-4">
           <img src="img/<?php echo $row['Image']?>" style="width: 600px;height: 500px" >
-			
-			
+      
+      
 
         </div>
-	 
-	 
+   
+   
         <?php
-    	}
-    	?>
+      }
+      ?>
      </div>
      </div>
     

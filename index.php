@@ -80,19 +80,22 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/8/2/d/8/82d884e583a2226d37df196495da6b20.jpg" alt="First slide">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Website-He-01-1392x435.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/3/1/310b98ade43043a069c3d3e9ee0c5766_1515485837.jpg" alt="Second slide">
+      <img class="d-block w-100" src="https://www.hangdochoi.com/wp-content/uploads/2019/05/hangdochoi-banner-dochoi.jpg" 
+      alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/2/a/2ac9d9aa479519e1724db5b860373578_1499827968.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://cafefcdn.com/2018/12/17/banner-hinh-do-choi-1545016993587208100840.jpg" 
+      alt="Third slide">
     </div>
-	   <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/d/1/d1c2738deec7efd1942a3027a1c436b0_1499828277.jpg" alt="Third slide">
+     <div class="carousel-item">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Smoneo-Website-01-1392x435.png" alt="Third slide">
     </div>
-	  <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/b/0/6/d/b06db10784a4c5c1ff9d9beb14f312c3.jpg" alt="Third slide">
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://kiddystore.vn/uploads/slider/kiddystore_vn_1617330762.jpg" 
+      alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -107,43 +110,43 @@
 <!-- end slide -->
 <!-- list product -->
 <div class="container">
-	<div class="row mt-5">
-		<h2 class="list-product-title">New Songs</h2>
-		<div class="list-product-subtitle">
-			
-		</div>
-		<div class="product-group">
-			<div class="row">
-				
-					  <?php
-						include("include/conn.php");
-				        $get_pro= "select * from song";
-		                  $run_pro = mysqli_query($connect, $get_pro);
-							while($row_pro = mysqli_fetch_array($run_pro)){
-								$id =$row_pro['SongID'];
-								$SongName =$row_pro['SongName'];
-								$Price =$row_pro['Price'];
-								$NameSinger =$row_pro['NameSinger'];
-								$Image =$row_pro['Image'];
-								$MP3 =$row_pro['MP3'];
-								echo "
-								   <div class='col-md-3 col-sm-6 col-12'>
-					                <div class='card card-product mb-3' >
-									<a href='details.php?id=$id' style='text-decoration: none; text-align: center;'>
-									  <div id='song'>
-									  <img src='img/$Image' width='280' height='280' >
-									  <h1>$SongName</h1>
-									  <p><b>Price: $Price</b></p>
-									  <p><b>Singer: $NameSinger</b></p>
-									  <audio controlsList='nodownload'  ontimeupdate='myAudio(this)'src='./song/$MP3'></audio>
-									 
-									  
-									   </div>
-									  </div>
-									</div>
-									  ";
-							}						
-				?>
+  <div class="row mt-5">
+    <h2 class="list-product-title">New Products</h2>
+    <div class="list-product-subtitle">
+      
+    </div>
+    <div class="product-group">
+      <div class="row">
+        
+            <?php
+              include("include/conn.php");
+                $get_pro= "select * from song";
+                      $run_pro = mysqli_query($connect, $get_pro);
+              while($row_pro = mysqli_fetch_array($run_pro)){
+                $id =$row_pro['ProductID'];
+                $ProductName =$row_pro['ProductName'];
+                $Price =$row_pro['Price'];
+                $OriGin =$row_pro['OriGin'];
+                $Image =$row_pro['Image'];
+                
+                echo "
+                   <div class='col-md-6 col-sm-4 col-12'>
+                          <div class='card card-product mb-5' >
+                  <a href='details.php?id=$id' style='text-decoration: none; text-align: center;'>
+                    <div id='song'>
+                    <img src='img/$Image' width='280' height='280' >
+                    <h1>$ProductName</h1>
+                    <p><b>Price: $Price</b></p>
+                    <p><b>OriGin: $OriGin</b></p>
+                    
+                   
+                    
+                     </div>
+                    </div>
+                  </div>
+                    ";
+              }           
+        ?>
 			
 			</div>
 			</div>

@@ -58,19 +58,22 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/8/2/d/8/82d884e583a2226d37df196495da6b20.jpg" alt="First slide">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Website-He-01-1392x435.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/3/1/310b98ade43043a069c3d3e9ee0c5766_1515485837.jpg" alt="Second slide">
+      <img class="d-block w-100" src="https://www.hangdochoi.com/wp-content/uploads/2019/05/hangdochoi-banner-dochoi.jpg" 
+      alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/2/a/2ac9d9aa479519e1724db5b860373578_1499827968.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://cafefcdn.com/2018/12/17/banner-hinh-do-choi-1545016993587208100840.jpg" 
+      alt="Third slide">
     </div>
 	   <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/d/1/d1c2738deec7efd1942a3027a1c436b0_1499828277.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Smoneo-Website-01-1392x435.png" alt="Third slide">
     </div>
 	  <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/b/0/6/d/b06db10784a4c5c1ff9d9beb14f312c3.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://kiddystore.vn/uploads/slider/kiddystore_vn_1617330762.jpg" 
+      alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -87,13 +90,13 @@
 	    <div class="container">
         <div class="row justify-content-center">
 			<div class='col-2'>
-				<h6>Song Name</h6>
+				<h6>Product name</h6>
 			</div>
 			<div class='col-2'>
 				<h6>Price</h6>
 			</div>
 			<div class='col-2'>
-				<h6>Singer</h6>
+				<h6>OriGin</h6>
 			</div>
 			<div class='col-2'>
 				<h6>Image</h6>
@@ -106,20 +109,20 @@
 			</div>
 		</div>
 		<?php 
-		include("../include/conn.php");
+		 include("../include/conn.php");
 		$sql="select*from song";
 		$result= $connect->query($sql);
 		while($song=$result->fetch_object()){
 			echo "
         <div class='row justify-content-center' style='margin-bottom:20px;'>
 			<div class='col-2'>
-				<p>$song->SongName</p>
+				<p>$song->ProductName</p>
 			</div>
 			<div class='col-2'>
 				<p>$song->Price</p>
 			</div>
 			<div class='col-2'>
-				<p>$song->NameSinger</p>
+				<p>$song->OriGin</p>
 			</div>
 			<div class='col-2'>
 				<img src='../img/$song->Image' style=' height: 60px; width: 60px;' >
@@ -134,8 +137,8 @@
 			</div>
 			<div class='col-2'>
 			    <a href='addproduct.php'>Add</a>
-				<a href='editsong.php?update_id=$song->SongID'>Edit</a>
-				<a href='songlist.php?delete_id=$song->SongID'>Delete</a>
+				<a href='editsong.php?update_id=$song->ProductID'>Edit</a>
+				<a href='songlist.php?delete_id=$song->ProductID'>Delete</a>
 			</div>
 		</div>";
 		}
@@ -151,7 +154,7 @@
 						
 					$songID=$_GET['delete_id'];
                     
-                        $result2=$connect->query("delete from song where SongID=$songID");
+                        $result2=$connect->query("delete from song where ProductID=$ProductID");
                         
 					
                         if($result2){

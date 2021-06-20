@@ -61,19 +61,22 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/8/2/d/8/82d884e583a2226d37df196495da6b20.jpg" alt="First slide">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Website-He-01-1392x435.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/3/1/310b98ade43043a069c3d3e9ee0c5766_1515485837.jpg" alt="Second slide">
+      <img class="d-block w-100" src="https://www.hangdochoi.com/wp-content/uploads/2019/05/hangdochoi-banner-dochoi.jpg" 
+      alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/2/a/2ac9d9aa479519e1724db5b860373578_1499827968.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://cafefcdn.com/2018/12/17/banner-hinh-do-choi-1545016993587208100840.jpg" 
+      alt="Third slide">
     </div>
-	   <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/d/1/d1c2738deec7efd1942a3027a1c436b0_1499828277.jpg" alt="Third slide">
+     <div class="carousel-item">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Smoneo-Website-01-1392x435.png" alt="Third slide">
     </div>
-	  <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/b/0/6/d/b06db10784a4c5c1ff9d9beb14f312c3.jpg" alt="Third slide">
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://kiddystore.vn/uploads/slider/kiddystore_vn_1617330762.jpg" 
+      alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -89,9 +92,8 @@
 <!-- list product -->
 <?php 
  
-include("include/conn.php");
- ?>
- <h3 style="text-align: center;">Congratulations on your payment and you can now download it</h3>
+ include("../include/conn.php");
+ <h3 style="text-align: center;">Congratulations on your payment and Products will be delivered to you tomorrow</h3>
  
 
  <div class="container-fluid">
@@ -102,15 +104,13 @@ include("include/conn.php");
     foreach ($_SESSION['cart'] as $item) :
     ?>
     <div class="products" style="border: 2px solid black">
-    <a href="single.php?id=<?php echo $item['SongID']?>" style="text-decoration: none;">
-    <div><img style="height: 200px; width:200px" src="Img/<?php echo $item['Image']?>" class="img-cart"></div>
-    <h2><?php echo $item['SongName'] ?></h2>
-        <audio controls controlsList="autodownload">
-          <source src="song/<?php echo $item['MP3'] ?>" type="audio/mpeg">
-          </audio>
+    <a href="single.php?id=<?php echo $item['ProductID']?>" style="text-decoration: none;">
+    <div><img style="height: 200px; width:200px" src="img/<?php echo $item['Image']?>" class="img-cart"></div>
+    <h2><?php echo $item['ProductName'] ?></h2>
+        
          </a>
          <br>
-         <h4>Click on icon <i class="fas fa-ellipsis-v"></i> to download</h4>
+         
          </div>
            <?php
   endforeach;

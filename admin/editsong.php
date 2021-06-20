@@ -58,19 +58,22 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/8/2/d/8/82d884e583a2226d37df196495da6b20.jpg" alt="First slide">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Website-He-01-1392x435.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/3/1/310b98ade43043a069c3d3e9ee0c5766_1515485837.jpg" alt="Second slide">
+      <img class="d-block w-100" src="https://www.hangdochoi.com/wp-content/uploads/2019/05/hangdochoi-banner-dochoi.jpg" 
+      alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/2/a/2ac9d9aa479519e1724db5b860373578_1499827968.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://cafefcdn.com/2018/12/17/banner-hinh-do-choi-1545016993587208100840.jpg" 
+      alt="Third slide">
     </div>
-	   <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/d/1/d1c2738deec7efd1942a3027a1c436b0_1499828277.jpg" alt="Third slide">
+     <div class="carousel-item">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Smoneo-Website-01-1392x435.png" alt="Third slide">
     </div>
-	  <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/b/0/6/d/b06db10784a4c5c1ff9d9beb14f312c3.jpg" alt="Third slide">
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://kiddystore.vn/uploads/slider/kiddystore_vn_1617330762.jpg" 
+      alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -84,47 +87,35 @@
 </div>
 <!-- end slide -->
 <!-- list product -->
-	
-	 <?php
-	include("../include/conn.php");
-	 if(isset($_GET['update_id'])){					
-					$SongID=$_GET['update_id'];
-		 			$result=$connect->query("select * from song Where SongID=$SongID");
-                    $row=$result->fetch_object();  
-		
-                }        
-      ?>
-   
-    <div class="container">
+      <div class="container">
         <div class="row justify-content-center">
-			<div class="col col-8">
+      <div class="col col-8">
             <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="name">Songs name</label>
-                <input class="form-control" value=" <?php if(isset($_GET['update_id'])){echo "$row->SongName";} ?>" name="SongName" type="text">
+                <label for="name">Product Name</label>
+                <input class="form-control" name="ProductName" type="text">
             </div>
-			<div class="form-group">
+      <div class="form-group">
                 <label for="name">Price</label>
-                <input class="form-control" value=" <?php if(isset($_GET['update_id'])){echo "$row->Price";} ?>" name="Price" type="text">
+                <input class="form-control" name="Price" type="text">
             </div>
-			<div class="form-group">
-                <label for="name">Name Singer</label>
-                <input class="form-control" value=" <?php if(isset($_GET['update_id'])){echo "$row->NameSinger";} ?>" name="NameSinger" type="text">
+      <div class="form-group">
+                <label for="name">OriGin</label>
+                <input class="form-control" name="OriGin" type="text">
             </div>
-			
+      
             <div class="form-group">
               <label for="priceproduct">Image</label>
-              <input type="file" name="Image" id="priceproduct" value="" class="form-control">
+              <input type="file" name="Image" id="priceproduct" class="form-control">
             </div>
-            <div class="form-group">
-              <label for="des">MP3</label>	
-              <input name="MP3" type="file" value=" " id="des" class="form-control">
-            </div>
-            <div class="form-group">
+           
+
+        <div class="form-group">
                 <label for="category">Genre</label>
-                <select name="GenreID">
-                    <?php
-					include("include/conn.php");
+                <select name="GenreID">   
+
+          <?php
+                     include("../include/conn.php");
                         $result=$connect->query("select * from genre");
                         while($row=$result->fetch_array()){
                             $catId=$row["GenreID"];
@@ -132,30 +123,31 @@
                             echo "<option value='$catId'>$catName</option>";
                         }
                     ?>
-                </select>
+              </select>
+
             </div>
-			
-            <button name="Edit" type="submit" class="form-control btn btn-primary">Edit</button>
+       <diV><button name="Add" type="submit" class="form-control btn btn-primary">Add</button>
+</diV>
+
+            
             </form>
-			</div>
+      </div>
         </div>
     </div>
                 <?php
-                if(isset($_POST['Edit'])){
-                    $Song_name=$_POST['SongName'];
+                if(isset($_POST['Add'])){
+                    $Product_Name=$_POST['ProductName'];
                     $Price=$_POST['Price'];
-                    $Name_Singer=$_POST['NameSinger'];
-					$Genre=$_POST['GenreID'];
-                    $Song_Image=$_FILES['Image']['name'];
-					
-                    $target="../img/".basename($Song_Image);
-                    $resulttarget="img/".basename($Song_Image);
-					$MP3=$_FILES['MP3']['name'];
-                    $target2="../song/".basename($MP3);
-                    $resulttarget2="song/".basename($MP3);
-					move_uploaded_file($_FILES['Image']['tmp_name'],$target);
-					move_uploaded_file($_FILES['MP3']['tmp_name'],$target2);
-                        $result2=$connect->query("Update song set SongName='$Song_name',Price='$Price',NameSinger='$Name_Singer',Image='$Song_Image',MP3='$MP3',GenreID='$Genre' where SongID=$SongID");
+                    $OriGin=$_POST['OriGin'];
+          $Genre=$_POST['GenreID'];
+                    $Product_Image=$_FILES['Image']['name'];
+          
+                    $target="../img/".basename($Product_Image);
+                    $resulttarget="img/".basename($Product_Image);
+          
+          move_uploaded_file($_FILES['Image']['tmp_name'],$target);
+          
+                        $result2=$connect->query("INSERT INTO song VALUES(NULL,'$Product_Name','$Price','$OriGin','$Product_Image','$Genre')");
                         
 					
                         if($result2){

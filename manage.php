@@ -60,20 +60,23 @@
 	  <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/8/2/d/8/82d884e583a2226d37df196495da6b20.jpg" alt="First slide">
+     <div class="carousel-item active">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Website-He-01-1392x435.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/3/1/310b98ade43043a069c3d3e9ee0c5766_1515485837.jpg" alt="Second slide">
+      <img class="d-block w-100" src="https://www.hangdochoi.com/wp-content/uploads/2019/05/hangdochoi-banner-dochoi.jpg" 
+      alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/2/a/2ac9d9aa479519e1724db5b860373578_1499827968.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://cafefcdn.com/2018/12/17/banner-hinh-do-choi-1545016993587208100840.jpg" 
+      alt="Third slide">
     </div>
-	   <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/covers/d/1/d1c2738deec7efd1942a3027a1c436b0_1499828277.jpg" alt="Third slide">
+     <div class="carousel-item">
+      <img class="d-block w-100" src="https://danhchobeyeu.com/media/cache/data/Banner-Smoneo-Website-01-1392x435.png" alt="Third slide">
     </div>
-	  <div class="carousel-item">
-      <img class="d-block w-100" src="https://photo-zmp3.zadn.vn/cover/b/0/6/d/b06db10784a4c5c1ff9d9beb14f312c3.jpg" alt="Third slide">
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://kiddystore.vn/uploads/slider/kiddystore_vn_1617330762.jpg" 
+      alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -87,13 +90,13 @@
 </div>
 <!-- end slide -->
 <!-- list product -->
-	<?php 
+  <?php 
 
 include("include/conn.php");
 if ($_SERVER['REQUEST_METHOD']=='POST') {
   $id =$_POST['id'];
   if (empty($_SESSION['cart'][$id])) {
-    $q=mysqli_query($connect,"SELECT * FROM song WHERE SongID = {$id}");
+    $q=mysqli_query($connect,"SELECT * FROM song WHERE ProductID = {$id}");
     $product = mysqli_fetch_assoc($q);
     $_SESSION['cart'][$id]=$product;
   $_SESSION['cart'][$id]['sl']=$_POST['sl'];
@@ -103,22 +106,22 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
  ?>
  <div class="container-fluid">
  <div class="row">
- 	<link rel="stylesheet" type="text/css" href="cart.css">
- 	<h3 class="giohang"><i class="fas fa-shopping-cart"></i> Cart</h3>
+  <link rel="stylesheet" type="text/css" href="cart.css">
+  <h3 class="giohang"><i class="fas fa-shopping-cart"></i> Cart</h3>
   <br>
   <br>
- 	<?php 
- 	if (!empty($_SESSION['cart'])) {
- 		foreach ($_SESSION['cart'] as $item) :
- 		?>
- 		<div class="products" style="border: 2px solid black">
- 	 	<a href="single.php?id=<?php echo $item['SongID']?>" style="text-decoration: none;">
- 	 	<div><img style="width: 310px" src="Img/<?php echo $item['Image']?>" class="img-cart"></div>
- 	 	<h2><?php echo $item['SongName'] ?></h2>
-        <p style="color: red">Price: <?php echo $item['Price']." $"; ?></p>
+  <?php 
+  if (!empty($_SESSION['cart'])) {
+    foreach ($_SESSION['cart'] as $item) :
+    ?>
+    <div class="products" style="border: 2px solid black">
+    <a href="single.php?id=<?php echo $item['ProductID']?>" style="text-decoration: none;">
+    <div><img style="width: 310px" src="img/<?php echo $item['Image']?>" class="img-cart"></div>
+    <h2><?php echo $item['ProductName'] ?></h2>
+        <p style="color: red">Price: <?php echo $item['Price']." $ "; ?></p>
         <?php
-		echo "<a href='delcart.php?productid=$item[SongID]' style='text-decoration: none;'>Delete</a>";
-		?>
+    echo "<a href='delcart.php?productid=$item[ProductID]' style='text-decoration: none;'>Delete</a>";
+    ?>
          </a>
          </div>
          	 <?php
