@@ -131,7 +131,7 @@
 					                <div class='card card-product mb-3' >
 									<a href='details.php?id=$id' style='text-decoration: none; text-align: center;'>
 									  <div id='song'>
-									  <img src='Img/$Image' width='280' height='280' >
+									  <img src='img/$Image' width='280' height='280' >
 									  <h1>$SongName</h1>
 									  <p><b>Price: $Price</b></p>
 									  <p><b>Singer: $NameSinger</b></p>
