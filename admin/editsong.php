@@ -148,14 +148,14 @@
 					$Genre=$_POST['GenreID'];
                     $Song_Image=$_FILES['Image']['name'];
 					
-                    $target="../Img/".basename($Song_Image);
-                    $resulttarget="Img/".basename($Song_Image);
+                    $target="../img/".basename($Song_Image);
+                    $resulttarget="img/".basename($Song_Image);
 					$MP3=$_FILES['MP3']['name'];
                     $target2="../song/".basename($MP3);
                     $resulttarget2="song/".basename($MP3);
 					move_uploaded_file($_FILES['Image']['tmp_name'],$target);
 					move_uploaded_file($_FILES['MP3']['tmp_name'],$target2);
-                        $result2=$conn->query("Update song set SongName='$Song_name',Price='$Price',NameSinger='$Name_Singer',Image='$Song_Image',MP3='$MP3',GenreID='$Genre' where SongID=$SongID");
+                        $result2=$connect->query("Update song set SongName='$Song_name',Price='$Price',NameSinger='$Name_Singer',Image='$Song_Image',MP3='$MP3',GenreID='$Genre' where SongID=$SongID");
                         
 					
                         if($result2){
