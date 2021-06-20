@@ -1,20 +1,13 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
 
-<body>
 	<?php
-$connect = mysqli_connect('localhost','root','','websitemusic');
-if (!$connect){
-echo "ket noi that bai";
-}
-else{
-echo"";
-}
-
+	$server = "52.6.114.59";
+	$user = "thanh090961";
+	$pass = "thanh090901";
+	$database = "website";
+	$connect = mysqli_connect($server, $user, $pass, $database); 
+	if (!$connect) {
+		die("Connect Failed:".mysqli_connect_error());
+		# code...
+	}
+	mysqli_set_charset($connect, 'UTF8');
 ?>
-</body>
-</html>
