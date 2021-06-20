@@ -115,8 +115,8 @@
                 <select name="GenreID">   
 
 				  <?php
-						$conn = mysqli_connect('localhost','root','','websitemusic');
-                        $result=$conn->query("select * from genre");
+						include("include/conn.php");
+                        $result=$connect->query("select * from genre");
                         while($row=$result->fetch_array()){
                             $catId=$row["GenreID"];
                             $catName=$row["GenreName"];

@@ -106,9 +106,9 @@
 			</div>
 		</div>
 		<?php 
-		$conn = mysqli_connect('localhost','root','','websitemusic');
+		include("include/conn.php");
 		$sql="select*from song";
-		$result= $conn->query($sql);
+		$result= $connect->query($sql);
 		while($song=$result->fetch_object()){
 			echo "
         <div class='row justify-content-center' style='margin-bottom:20px;'>

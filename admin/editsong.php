@@ -86,10 +86,10 @@
 <!-- list product -->
 	
 	 <?php
-	$conn = mysqli_connect('localhost','root','','websitemusic');
+	include("include/conn.php");
 	 if(isset($_GET['update_id'])){					
 					$SongID=$_GET['update_id'];
-		 			$result=$conn->query("select * from song Where SongID=$SongID");
+		 			$result=$connect->query("select * from song Where SongID=$SongID");
                     $row=$result->fetch_object();  
 		
                 }        
@@ -124,8 +124,8 @@
                 <label for="category">Genre</label>
                 <select name="GenreID">
                     <?php
-					$conn = mysqli_connect('localhost','root','','websitemusic');
-                        $result=$conn->query("select * from genre");
+					include("include/conn.php");
+                        $result=$connect->query("select * from genre");
                         while($row=$result->fetch_array()){
                             $catId=$row["GenreID"];
                             $catName=$row["GenreName"];
