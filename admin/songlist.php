@@ -126,7 +126,7 @@
 			</div>";
 			$genreID=$song->GenreID;
 			$sql1="select*from genre where GenreID=$genreID";
-			$result1= $conn->query($sql1);
+			$result1= $connect->query($sql1);
 			$genre=$result1->fetch_object();
 			echo"
 			<div class='col-2'>
