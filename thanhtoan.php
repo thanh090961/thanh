@@ -89,7 +89,7 @@
 <!-- list product -->
 <?php 
  
-$conn = mysqli_connect('localhost','root','','websitemusic');
+include("include/conn.php");
  ?>
  <h3 style="text-align: center;">Congratulations on your payment and you can now download it</h3>
  

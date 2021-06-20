@@ -112,7 +112,7 @@ h1{
 	</form>
 	</div>
 	<?php
-	include ('include/conn.php');
+	include("include/conn.php");
 	if (isset($_POST['Register'])){
 		$UserName= $_POST['UserName'];
 		$PassWord =$_POST['PassWord'];

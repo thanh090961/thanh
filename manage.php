@@ -89,11 +89,11 @@
 <!-- list product -->
 	<?php 
 
-$conn = mysqli_connect('localhost','root','','websitemusic');
+include("include/conn.php");
 if ($_SERVER['REQUEST_METHOD']=='POST') {
   $id =$_POST['id'];
   if (empty($_SESSION['cart'][$id])) {
-    $q=mysqli_query($conn,"SELECT * FROM song WHERE SongID = {$id}");
+    $q=mysqli_query($connect,"SELECT * FROM song WHERE SongID = {$id}");
     $product = mysqli_fetch_assoc($q);
     $_SESSION['cart'][$id]=$product;
   $_SESSION['cart'][$id]['sl']=$_POST['sl'];

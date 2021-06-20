@@ -90,11 +90,11 @@
 			<div class="col-lg-12">
 				<h1>Search list</h1>
 	<?php 
-            $conn = mysqli_connect('localhost','root','','websitemusic');
+            include("include/conn.php");
            if(isset($_GET['search'])){ 
 			   echo "<script>alert('ok)</script>";
 				  $search =$_GET['inputSearch'];
-			   $result= mysqli_query($conn,"select * from song where SongName like '%$search%'");
+			   $result= mysqli_query($connect,"select * from song where SongName like '%$search%'");
 			   while($row=mysqli_fetch_array($result)){
 	
 			   $Image=$row['Image'];
