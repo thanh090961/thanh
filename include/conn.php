@@ -1,6 +1,6 @@
 
 	<?php
-	$server = "52.6.114.59";
+	$server = "52.3.220.13";
 	$user = "thanh123";
 	$pass = "thanh123";
 	$database = "website";
