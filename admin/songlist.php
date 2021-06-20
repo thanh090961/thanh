@@ -106,7 +106,7 @@
 			</div>
 		</div>
 		<?php 
-		include("include/conn.php");
+		include("../include/conn.php");
 		$sql="select*from song";
 		$result= $connect->query($sql);
 		while($song=$result->fetch_object()){
@@ -151,7 +151,7 @@
 						
 					$songID=$_GET['delete_id'];
                     
-                        $result2=$conn->query("delete from song where SongID=$songID");
+                        $result2=$connect->query("delete from song where SongID=$songID");
                         
 					
                         if($result2){

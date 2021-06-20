@@ -86,7 +86,7 @@
 <!-- list product -->
 	
 	 <?php
-	include("include/conn.php");
+	include("../include/conn.php");
 	 if(isset($_GET['update_id'])){					
 					$SongID=$_GET['update_id'];
 		 			$result=$connect->query("select * from song Where SongID=$SongID");

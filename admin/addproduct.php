@@ -115,7 +115,7 @@
                 <select name="GenreID">   
 
 				  <?php
-						include("include/conn.php");
+						include("../include/conn.php");
                         $result=$connect->query("select * from genre");
                         while($row=$result->fetch_array()){
                             $catId=$row["GenreID"];
