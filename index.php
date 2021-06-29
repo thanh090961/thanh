@@ -43,7 +43,7 @@
                       Admin
                   </a>
                   <div class="dropdown-content">
-                      <a class="dropdown-item" href="./admin/songlist.php">Song</a>
+                      <a class="dropdown-item" href="./admin/songlist.php">Products</a>
                       <a class="dropdown-item" href="">Genre</a>
                       
               </li>
