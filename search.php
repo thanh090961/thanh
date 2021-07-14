@@ -109,7 +109,7 @@
          <img src='img/$Image' alt='' style='height: 20rem;width:50%'>
          </div>
          <div class='card-footer bg-transparent border-success'>
-           <a class='btn btn-primary' href='details.php?id=$ida'>Song_Details</a>
+           <a class='btn btn-primary' href='details.php?id=$ida'>Products_Details</a>
          <a class='btn btn-danger' href='cart.php?id=$ida'>Add to cart</a></div>
          </div>";
          }
